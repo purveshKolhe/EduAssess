@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduAssess — Biology 101 · Cell Biology Quiz</title>
+  <link rel="stylesheet" href="./exa_view.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- Main App Header -->
+    <header class="app-header">
+      <div class="container header-inner">
+        <a href="#" class="brand">EduAssess</a>
+        <span class="user-badge">Student · Maya</span>
+      </div>
+    </header>
+
+    <!-- Main Exam Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Exam Title & Session Metadata -->
+        <section class="exam-header-meta">
+          <h1>Biology 101 · Cell Biology Quiz</h1>
+          <p class="session-details">
+            BIO-CELL-01 · Maya Patel · ST-1042 · Started 09:30:00 · Deadline 10:00:00 IST · 23 Oct 2026
+          </p>
+        </section>
+
+        <!-- Persistent Status & Countdown Bar -->
+        <section class="status-bar" aria-label="Exam timer and save status">
+          <div class="status-left">
+            <span class="timer-label">Time remaining</span>
+            <span class="timer-value" aria-live="polite">00:42</span>
+            <span class="save-status" aria-live="polite">✓ All changes saved · 09:59:18</span>
+          </div>
+          <p class="auto-submit-note">Your saved answers submit automatically at 00:00.</p>
+        </section>
+
+        <!-- Two-Column Exam Workspace -->
+        <div class="workspace-grid">
+          <!-- Left Sidebar: Question Progress & Navigator -->
+          <aside class="progress-sidebar" aria-label="Question navigation">
+            <div class="card progress-card">
+              <h2 class="sidebar-heading">Your progress</h2>
+              <p class="progress-count"><strong>Questions · 11 of 12</strong><br />answered</p>
+
+              <!-- 3x4 Question Palette Grid -->
+              <nav class="question-grid" aria-label="Question palette">
+                <a href="#q1" class="q-pill answered" aria-label="Question 1, answered">1 ✓</a>
+                <a href="#q2" class="q-pill answered" aria-label="Question 2, answered">2 ✓</a>
+                <a href="#q3" class="q-pill answered" aria-label="Question 3, answered">3 ✓</a>
+                <a href="#q4" class="q-pill answered" aria-label="Question 4, answered">4 ✓</a>
+                <a href="#q5" class="q-pill answered" aria-label="Question 5, answered and marked for review">5 ✓</a>
+                <a href="#q6" class="q-pill answered" aria-label="Question 6, answered">6 ✓</a>
+                <a href="#q7" class="q-pill answered" aria-label="Question 7, answered">7 ✓</a>
+                <a href="#q8" class="q-pill unanswered" aria-label="Question 8, unanswered">8</a>
+                <a href="#q9" class="q-pill answered" aria-label="Question 9, answered">9 ✓</a>
+                <a href="#q10" class="q-pill answered" aria-label="Question 10, answered">10 ✓</a>
+                <a href="#q11" class="q-pill answered" aria-label="Question 11, answered">11 ✓</a>
+                <a href="#q12" class="q-pill current" aria-current="page" aria-label="Question 12, current question, answered">12 ✓</a>
+              </nav>
+
+              <div class="palette-legend">
+                <p>✓ Saved answer · Outline: unanswered</p>
+                <p>Dark: current question</p>
+              </div>
+
+              <div class="palette-alerts">
+                <p><strong>Q8 unanswered</strong></p>
+                <p><strong>Q5 marked for review</strong></p>
+              </div>
+            </div>
+
+            <a href="#q8" class="btn btn-outline btn-full jump-btn">Go to Q8</a>
+          </aside>
+
+          <!-- Right Area: Active Question, Controls & Submit -->
+          <div class="question-workspace">
+            <!-- Active Question Card -->
+            <section class="card question-card" aria-labelledby="question-prompt">
+              <p class="question-meta">Question 12 of 12 · Short answer · 2 points</p>
+              <h2 id="question-prompt" class="question-text">
+                Explain how water moves across a selectively permeable membrane during osmosis.
+              </h2>
+
+              <label for="answer-input" class="answer-label">
+                Your answer · up to 100 words
+              </label>
+              <textarea
+                id="answer-input"
+                name="answer-input"
+                class="answer-textarea"
+                rows="4"
+              >Water moves from a dilute solution to a more concentrated solution through a selectively permeable membrane.</textarea>
+
+              <p class="word-save-meta">
+                16 / 100 words · ✓ Saved at 09:59:18 IST
+              </p>
+              <p class="draft-assurance">
+                Your saved draft is included even if the timer expires while you are writing.
+              </p>
+            </section>
+
+            <!-- Navigation & Utility Buttons -->
+            <div class="question-controls">
+              <button type="button" class="btn btn-outline">← Previous question</button>
+              <button type="button" class="btn btn-outline btn-expand">Flag for review</button>
+              <button type="button" class="btn btn-outline">Exam help</button>
+            </div>
+
+            <!-- Submission Warning Banner -->
+            <div class="submit-notice-box" role="status">
+              <p class="submit-notice-title">Ready to submit? One question is unanswered.</p>
+              <p class="submit-notice-text">
+                Return to Q8 to finish, or submit the 11 saved answers. You can review the summary before confirming.
+              </p>
+            </div>
+
+            <!-- Primary Submit CTA -->
+            <button type="button" class="btn btn-primary btn-full btn-submit">
+              Review &amp; submit →
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
