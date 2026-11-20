@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduAssess — Your exam is submitted</title>
+  <link rel="stylesheet" href="./sub_confirm.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- Main App Header -->
+    <header class="app-header">
+      <div class="container header-inner">
+        <a href="#" class="brand">EduAssess</a>
+        <span class="user-badge">Student · Maya</span>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Page Heading -->
+        <section class="page-intro">
+          <h1>Your exam is submitted</h1>
+        </section>
+
+        <!-- Confirmation Banner -->
+        <section class="status-banner" role="status" aria-live="polite">
+          <p class="status-heading">✓ Submission received · Answers locked</p>
+          <p class="status-subtext">
+            Your time ended at 10:00:00 IST. Your latest saved answers were submitted automatically. No saved work was lost.
+          </p>
+        </section>
+
+        <!-- Two-Column Receipt & Summary Grid -->
+        <div class="receipt-grid">
+          <!-- Left Card: Official Submission Receipt -->
+          <section class="card receipt-card" aria-labelledby="receipt-heading">
+            <h2 id="receipt-heading" class="card-heading">Submission receipt</h2>
+            <p class="course-title">Biology 101 · Cell Biology Quiz</p>
+
+            <dl class="receipt-details">
+              <div class="receipt-row">
+                <dt class="sr-only">Exam</dt>
+                <dd>Exam: BIO-CELL-01</dd>
+              </div>
+              <div class="receipt-row">
+                <dt class="sr-only">Student</dt>
+                <dd>Student: Maya Patel · ST-1042</dd>
+              </div>
+              <div class="receipt-row">
+                <dt class="sr-only">Attempt</dt>
+                <dd>Attempt: ATT-1042-01</dd>
+              </div>
+              <div class="receipt-row">
+                <dt class="sr-only">Started</dt>
+                <dd>Started: 23 Oct 2026, 09:30:00 IST</dd>
+              </div>
+              <div class="receipt-row">
+                <dt class="sr-only">Submitted</dt>
+                <dd>Submitted: 23 Oct 2026, 10:00:00 IST</dd>
+              </div>
+              <div class="receipt-row">
+                <dt class="sr-only">Method</dt>
+                <dd>Method: Automatic · Time expired</dd>
+              </div>
+              <div class="receipt-row">
+                <dt class="sr-only">Receipt</dt>
+                <dd>Receipt: EA-20261023-1042</dd>
+              </div>
+              <div class="receipt-row">
+                <dt class="sr-only">Status</dt>
+                <dd>Status: Received by EduAssess</dd>
+              </div>
+            </dl>
+          </section>
+
+          <!-- Right Column: What Was Submitted & Next Steps -->
+          <div class="summary-column">
+            <section class="card submitted-card" aria-labelledby="submitted-heading">
+              <h2 id="submitted-heading" class="card-heading">What was submitted</h2>
+              <ul class="submitted-list">
+                <li>11 saved answers, including Q12 draft</li>
+                <li>Q8 unanswered</li>
+                <li>Latest save included: 09:59:29 IST</li>
+                <li>Duration: 30:00 of 30:00</li>
+              </ul>
+            </section>
+
+            <p class="review-note">
+              Your teacher will review your answers and any session events. Results are not yet published.
+            </p>
+
+            <a href="#dashboard" class="btn btn-primary btn-full">
+              Back to Dashboard
+            </a>
+
+            <p class="contact-note">
+              Questions about this submission? Contact Dr. Aisha Shah and quote your receipt number.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+   
+  </div>
+</body>
+</html>
