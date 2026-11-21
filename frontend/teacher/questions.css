@@ -1,0 +1,297 @@
+
+/* Attempt Details Page */
+
+.attempt-heading {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+.back-link {
+    text-decoration: none;
+    color: #292929;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.student-details {
+    margin-top: 20px;
+    margin-bottom: 18px;
+}
+
+.student-details p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.attempt-status {
+    background-color: #f3f3f3;
+    border: 1px solid #777;
+    border-left: 3px solid #555;
+    border-radius: 4px;
+    padding: 13px 11px;
+    margin-bottom: 18px;
+}
+
+.attempt-status h3 {
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.attempt-status p {
+    font-size: 12px;
+    color: #666;
+}
+
+.attempt-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 21px;
+    align-items: start;
+}
+
+.left-content,
+.right-content {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.content-card {
+    border: 1px solid #c9c9c9;
+    border-radius: 6px;
+    padding: 15px 13px;
+    background-color: white;
+}
+
+.content-card h3 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.content-card .form-group {
+    margin-bottom: 13px;
+}
+
+.content-card select {
+    width: 100%;
+    height: 44px;
+    border: 1px solid #777;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 13px;
+    background-color: white;
+}
+
+.saved-question h4 {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 11px;
+}
+
+.student-answer {
+    background-color: #f3f3f3;
+    padding: 13px;
+    margin-bottom: 11px;
+}
+
+.student-answer p {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.saved-time {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.timing-card > p {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.timing-card h4 {
+    font-size: 13px;
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
+.time-bar {
+    display: grid;
+    grid-template-columns: 27px 1fr 38px;
+    gap: 9px;
+    align-items: center;
+    margin-bottom: 11px;
+}
+
+.time-bar span {
+    font-size: 11px;
+    color: #666;
+}
+
+.bar-background {
+    height: 14px;
+    background-color: #f1f1f1;
+}
+
+.bar-fill {
+    height: 14px;
+    background-color: #bdbdbd;
+}
+
+.bar-one {
+    width: 34%;
+}
+
+.bar-two {
+    width: 80%;
+}
+
+.bar-three {
+    width: 53%;
+}
+
+.bar-four {
+    width: 18%;
+}
+
+.bar-labels {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 36px;
+    margin-top: 12px;
+}
+
+.view-all {
+    font-size: 11px;
+    color: #666;
+    margin-top: 15px;
+}
+
+.audit-card h4 {
+    font-size: 12px;
+    margin-bottom: 13px;
+}
+
+.audit-events p {
+    font-size: 12px;
+    margin-bottom: 11px;
+    color: #444;
+}
+
+.review-notice {
+    background-color: #f3f3f3;
+    border: 1px solid #777;
+    border-left: 3px solid #555;
+    border-radius: 4px;
+    padding: 12px 10px;
+    margin-top: 13px;
+}
+
+.review-notice h4 {
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.review-notice p {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.review-btn {
+    width: 100%;
+    height: 44px;
+    background-color: white;
+    border: 1px solid #333;
+    margin-top: 11px;
+}
+
+.export-label {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.radio-options,
+.export-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.radio-options label,
+.export-checkboxes label {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.radio-options input,
+.export-checkboxes input {
+    accent-color: #555;
+}
+
+.export-checkboxes {
+    margin-top: 14px;
+}
+
+.export-note {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.5;
+    margin-top: 14px;
+    margin-bottom: 11px;
+}
+
+.download-btn {
+    width: 100%;
+    height: 44px;
+    background-color: #303030;
+    color: white;
+    border: none;
+}
+
+.content-card select:focus {
+    outline: 2px solid #555;
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+
+    .attempt-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .attempt-heading {
+        font-size: 21px;
+    }
+
+    .student-details p {
+        line-height: 1.5;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .content-card {
+        padding: 12px;
+    }
+
+    .time-bar {
+        grid-template-columns: 25px 1fr 35px;
+        gap: 6px;
+    }
+
+    .attempt-status p {
+        line-height: 1.5;
+    }
+
+}
+

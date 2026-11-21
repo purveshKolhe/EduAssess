@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduAssess - Create Exam</title>
+    <link rel="stylesheet" href="setting.css">
+</head>
+
+<body>
+
+    <h2 class="page-heading">Teacher · Exam settings desktop</h2>
+
+    <div class="dashboard">
+
+        <div class="top-info">
+            <p class="info-heading">RESPONSIVE ADAPTATIONS / TEACHER</p>
+            <p>Desktop · 1280 px / 02 · Create exam / Schedule</p>
+        </div>
+
+        <header>
+            <h3>EduAssess</h3>
+            <p>Teacher · A. Shah</p>
+        </header>
+
+        <main>
+
+            <h1 class="create-heading">Create an exam</h1>
+
+            <div class="step-info">
+                <a href="index.html">‹ Your exams</a>
+                <p>Step 1 of 2 · Schedule & access</p>
+            </div>
+
+            <form>
+
+                <div class="form-layout">
+
+                    <div class="left-column">
+
+                        <div class="form-card">
+
+                            <h3>Exam details</h3>
+
+                            <div class="form-group">
+                                <label for="exam-title">Exam title *</label>
+                                <input
+                                    type="text"
+                                    id="exam-title"
+                                    value="Biology 101 · Cell Biology Quiz"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="class">Class *</label>
+                                <select id="class" required>
+                                    <option>Class 10-B · 30 students</option>
+                                    <option>Class 10-A · 28 students</option>
+                                    <option>Class 11-A · 32 students</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exam-code">Exam code</label>
+                                <input
+                                    type="text"
+                                    id="exam-code"
+                                    value="BIO-CELL-01">
+                                <small>Students use this code to find the exam.</small>
+                            </div>
+
+                        </div>
+
+                        <div class="checkbox-area">
+
+                            <label>
+                                <input type="checkbox" checked>
+                                Record tab-switch events for review
+                            </label>
+
+                            <p>Students will see this policy before starting.</p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="right-column">
+
+                        <div class="step-label">
+                            <p>Step 1 of 2 · Schedule & access</p>
+                        </div>
+
+                        <div class="form-card">
+
+                            <h3>Start window</h3>
+
+                            <div class="form-group">
+                                <label for="exam-date">Exam date *</label>
+                                <input
+                                    type="date"
+                                    id="exam-date"
+                                    value="2026-10-23"
+                                    required>
+                            </div>
+
+                            <div class="time-layout">
+
+                                <div class="form-group">
+                                    <label for="open-time">Opens at *</label>
+                                    <input
+                                        type="time"
+                                        id="open-time"
+                                        value="09:00"
+                                        required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="last-entry">Last entry at *</label>
+                                    <input
+                                        type="time"
+                                        id="last-entry"
+                                        value="09:30"
+                                        required>
+                                </div>
+
+                            </div>
+
+                            <p class="timezone">
+                                Time zone: India Standard Time (UTC+05:30)
+                            </p>
+
+                            <div class="form-group">
+                                <label for="duration">Attempt duration (minutes) *</label>
+                                <input
+                                    type="number"
+                                    id="duration"
+                                    value="30"
+                                    min="1"
+                                    required>
+                                <small>Each student gets 30 minutes from their start time.</small>
+                            </div>
+
+                        </div>
+
+                        <div class="notice-box">
+
+                            <h4>Entry window is not the deadline</h4>
+
+                            <p>
+                                A 09:29 start ends at 09:59. No new starts
+                                after 09:30. Saved answers submit automatically
+                                when an attempt's timer expires.
+                            </p>
+
+                        </div>
+
+                        <div class="form-buttons">
+
+                            <button type="button" class="outline-btn">
+                                Save draft & exit
+                            </button>
+
+                            <button type="submit" class="dark-btn">
+                                Continue to questions →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </main>
+
+        <footer>
+            <p>
+                Next: Continue to questions → question setup.
+                Settings shown for the same sample exam before publication.
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

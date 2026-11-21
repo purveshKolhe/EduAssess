@@ -1,0 +1,222 @@
+
+/* Create Exam Page */
+
+.create-heading {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+.step-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.step-info a {
+    text-decoration: none;
+    color: #292929;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.step-info p {
+    font-size: 13px;
+    color: #666;
+}
+
+.form-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 21px;
+}
+
+.left-column,
+.right-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-card {
+    border: 1px solid #c9c9c9;
+    border-radius: 6px;
+    padding: 15px 13px;
+    background-color: white;
+}
+
+.form-card h3 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 13px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 44px;
+    border: 1px solid #777;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 13px;
+    background-color: white;
+    color: #333;
+}
+
+.form-group small {
+    font-size: 11px;
+    color: #666;
+    margin-top: 7px;
+}
+
+.time-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 11px;
+}
+
+.timezone {
+    font-size: 12px;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 13px;
+}
+
+.checkbox-area {
+    margin-top: 18px;
+}
+
+.checkbox-area label {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.checkbox-area input {
+    accent-color: #555;
+}
+
+.checkbox-area p {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.step-label {
+    margin-bottom: 18px;
+}
+
+.step-label p {
+    font-size: 13px;
+    color: #666;
+}
+
+.notice-box {
+    background-color: #f3f3f3;
+    border: 1px solid #777;
+    border-left: 3px solid #555;
+    border-radius: 4px;
+    padding: 13px 11px;
+    margin-top: 17px;
+}
+
+.notice-box h4 {
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.notice-box p {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.form-buttons button {
+    padding: 13px 14px;
+    min-height: 44px;
+}
+
+.form-buttons .outline-btn {
+    width: auto;
+}
+
+.form-buttons .dark-btn {
+    width: auto;
+    padding-left: 17px;
+    padding-right: 17px;
+}
+
+.form-card input:focus,
+.form-card select:focus {
+    outline: 2px solid #555;
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+
+    .form-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .step-info {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .form-buttons {
+        flex-wrap: wrap;
+    }
+
+    .form-buttons button {
+        flex: 1;
+    }
+
+    .step-label {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .time-layout {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .step-info {
+        flex-direction: column;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    .form-buttons button {
+        width: 100% !important;
+    }
+}
+
