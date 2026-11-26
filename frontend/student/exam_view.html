@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduAssess — Biology 101 · Cell Biology Quiz</title>
+  <link rel="stylesheet" href="./exa_view.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Tab-Switch Warning Modal -->
+    <div class="tab-overlay" id="tab-warning-modal" role="alertdialog" aria-modal="true">
+      <div class="tab-modal">
+        <div class="warn-head">
+          <h2>⚠ Tab switch detected · Stay on this exam tab</h2>
+        </div>
+        <div class="warn-body">
+          <p class="warn-txt" id="tab-warning-text">
+            You left the exam tab. This event has been recorded in your teacher's audit log. Your countdown timer did not pause.
+          </p>
+          <button type="button" id="resume-exam-btn" class="btn btn-primary btn-full">Resume Exam</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main App Header -->
+    <header class="app-header">
+      <div class="container header-inner">
+        <a href="../../index.html" class="brand">EduAssess</a>
+        <div class="header-right">
+          <a href="../teacher/questions.html" class="switch-link" target="_blank">Open Teacher Monitor ↗</a>
+          <span class="user-badge">Student · Maya</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Exam Content -->
+    <main class="main-content" id="exam-main">
+      <div class="container">
+        <!-- Exam Title & Session Metadata -->
+        <section class="exam-header-meta">
+          <h1 id="exam-title">Biology 101 · Cell Biology Quiz</h1>
+          <p class="session-details" id="session-details">
+            BIO-CELL-01 · Maya Patel · ST-1042 · Started 09:30:00 · Deadline 10:00:00 IST · 23 Oct 2026
+          </p>
+        </section>
+
+        <!-- Persistent Status & Countdown Bar -->
+        <section class="status-bar" id="status-bar" aria-label="Exam timer and save status">
+          <div class="status-left">
+            <span class="timer-label">Time remaining</span>
+            <span class="timer-value" id="timer-value" aria-live="polite">00:42</span>
+            <span class="save-status" id="save-status" aria-live="polite">✓ All changes saved · 09:59:18</span>
+          </div>
+          <div class="status-right">
+            <button type="button" id="demo-fast-timer" class="demo-timer-btn" title="Set timer to 10s to test deadline auto-submit">
+              Demo: Set 10s left
+            </button>
+            <p class="auto-submit-note">Your saved answers submit automatically at 00:00.</p>
+          </div>
+        </section>
+
+        <!-- Two-Column Exam Workspace -->
+        <div class="workspace-grid">
+          <!-- Left Sidebar: Question Progress & Navigator -->
+          <aside class="progress-sidebar" aria-label="Question navigation">
+            <div class="card progress-card">
+              <h2 class="sidebar-heading">Your progress</h2>
+              <p class="progress-count" id="progress-count"><strong>Questions · 11 of 12</strong><br />answered</p>
+
+              <!-- Question Palette Grid -->
+              <nav class="question-grid" id="question-grid" aria-label="Question palette"></nav>
+
+              <div class="palette-legend">
+                <p><span class="dot dot-answered"></span> Saved answer · <span class="dot dot-unanswered"></span> Unanswered</p>
+                <p><span class="dot dot-current"></span> Current · <span class="dot dot-flagged"></span> Marked for review</p>
+              </div>
+
+              <div class="palette-alerts" id="palette-alerts">
+                <p><strong>Q8 unanswered</strong></p>
+                <p><strong>Q5 marked for review</strong></p>
+              </div>
+            </div>
+
+            <button type="button" id="jump-unanswered-btn" class="btn btn-outline btn-full jump-btn">Go to unanswered</button>
+          </aside>
+
+          <!-- Right Area: Active Question, Controls & Submit -->
+          <div class="question-workspace">
+            <!-- Active Question Card -->
+            <section class="card question-card" aria-labelledby="question-prompt">
+              <p class="question-meta" id="question-meta">Question 12 of 12 · Short answer · 2 points</p>
+              <h2 id="question-prompt" class="question-text">
+                Explain how water moves across a selectively permeable membrane during osmosis.
+              </h2>
+
+              <label for="answer-input" class="answer-label">
+                Your answer · up to 100 words
+              </label>
+              <textarea
+                id="answer-input"
+                name="answer-input"
+                class="answer-textarea"
+                rows="5"
+              ></textarea>
+
+              <p class="word-save-meta" id="word-save-meta">
+                0 / 100 words · ✓ Saved
+              </p>
+              <p class="draft-assurance">
+                Your saved draft is included even if the timer expires while you are writing.
+              </p>
+            </section>
+
+            <!-- Navigation & Utility Buttons -->
+            <div class="question-controls">
+              <button type="button" id="prev-q-btn" class="btn btn-outline">← Previous</button>
+              <button type="button" id="flag-q-btn" class="btn btn-outline btn-expand">Flag for review</button>
+              <button type="button" id="next-q-btn" class="btn btn-outline">Next →</button>
+            </div>
+
+            <!-- Submission Warning Banner -->
+            <div class="submit-notice-box" role="status">
+              <p class="submit-notice-title" id="submit-notice-title">Ready to submit? One question is unanswered.</p>
+              <p class="submit-notice-text" id="submit-notice-text">
+                Review all questions or submit your saved answers before the timer reaches 00:00.
+              </p>
+            </div>
+
+            <!-- Primary Submit CTA -->
+            <a href="submission.html" class="btn btn-primary btn-full btn-submit">
+              Review &amp; submit →
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="../shared/firebase-config.js"></script>
+  <script src="../shared/api.js"></script>
+  <script src="./exam_view.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduAssess — Submit your exam?</title>
+  <link rel="stylesheet" href="submission.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- Main App Header -->
+    <header class="app-header">
+      <div class="container header-inner">
+        <a href="../../index.html" class="brand">EduAssess</a>
+        <span class="user-badge">Student · Maya</span>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Page Heading & Student/Exam Metadata -->
+        <section class="page-intro">
+          <h1>Submit your exam?</h1>
+          <p class="exam-meta" id="sub-exam-meta">BIO-CELL-01 · Biology 101 · Cell Biology Quiz</p>
+          <p class="exam-meta" id="sub-student-meta">Maya Patel · ST-1042</p>
+        </section>
+
+        <!-- Active Timer & Auto-Save Banner -->
+        <section class="timer-banner" role="status" aria-live="polite">
+          <p class="timer-heading" id="sub-timer-heading">00:31 remaining · Timer continues</p>
+          <p class="timer-subtext" id="sub-save-time">✓ All changes saved at 09:59:29</p>
+          <p class="timer-subtext">
+            If you do nothing, these saved answers submit automatically when the timer reaches 00:00.
+          </p>
+        </section>
+
+        <!-- Two-Column Summary & Lock Notice -->
+        <div class="summary-grid">
+          <!-- Left Card: Submission Summary -->
+          <section class="card summary-card" aria-labelledby="summary-heading">
+            <h2 id="summary-heading" class="card-heading">Submission summary</h2>
+            <ul class="summary-list" id="summary-list">
+              <li>11 / 12 questions answered</li>
+              <li>1 unanswered · Q8</li>
+            </ul>
+            <hr class="card-divider" />
+            <p class="summary-footnote">
+              Unanswered questions receive no credit. Review flags do not exclude your answers from submission.
+            </p>
+          </section>
+
+          <!-- Right Column: Lock Warning & Reassurance -->
+          <div class="lock-column">
+            <section class="card lock-card" aria-labelledby="lock-heading">
+              <h2 id="lock-heading" class="lock-title">This ends your attempt</h2>
+              <p class="lock-description">
+                After submission, your answers are locked and cannot be edited. You will receive a timestamped receipt.
+              </p>
+            </section>
+
+            <p class="reassurance-note">
+              No work is discarded when the countdown ends. The latest saved version of each answer is included automatically.
+            </p>
+          </div>
+        </div>
+
+        <!-- Centered Action Buttons -->
+        <div class="action-buttons">
+          <button type="button" id="confirm-submit-btn" class="btn btn-primary">
+            Confirm submission
+          </button>
+          <a href="exam_view.html" class="btn btn-outline">
+            Return to exam
+          </a>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="../shared/firebase-config.js"></script>
+  <script src="../shared/api.js"></script>
+  <script src="./submission.js"></script>
+</body>
+</html>

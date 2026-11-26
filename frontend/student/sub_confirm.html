@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduAssess — Your exam is submitted</title>
+  <link rel="stylesheet" href="./sub_confirm.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- Main App Header -->
+    <header class="app-header">
+      <div class="container header-inner">
+        <a href="../../index.html" class="brand">EduAssess</a>
+        <div class="header-right">
+          <a href="../teacher/questions.html" class="switch-link">View in Teacher Audit Log →</a>
+          <span class="user-badge">Student · Maya</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Page Heading -->
+        <section class="page-intro">
+          <h1>Your exam is submitted</h1>
+        </section>
+
+        <!-- Confirmation Banner -->
+        <section class="status-banner" role="status" aria-live="polite">
+          <p class="status-heading">✓ Submission received · Answers locked</p>
+          <p class="status-subtext" id="receipt-banner-sub">
+            Your latest saved answers were submitted and locked. No saved work was lost.
+          </p>
+        </section>
+
+        <!-- Two-Column Receipt & Summary Grid -->
+        <div class="receipt-grid">
+          <!-- Left Card: Official Submission Receipt -->
+          <section class="card receipt-card" aria-labelledby="receipt-heading">
+            <h2 id="receipt-heading" class="card-heading">Submission receipt</h2>
+            <p class="course-title" id="receipt-course">Biology 101 · Cell Biology Quiz</p>
+
+            <dl class="receipt-details" id="receipt-details">
+              <div class="receipt-row"><dd>Exam: BIO-CELL-01</dd></div>
+              <div class="receipt-row"><dd>Student: Maya Patel · ST-1042</dd></div>
+              <div class="receipt-row"><dd>Attempt: ATT-1042-01</dd></div>
+              <div class="receipt-row"><dd>Status: Received &amp; Locked by EduAssess</dd></div>
+            </dl>
+          </section>
+
+          <!-- Right Column: What Was Submitted & Next Steps -->
+          <div class="summary-column">
+            <section class="card submitted-card" aria-labelledby="submitted-heading">
+              <h2 id="submitted-heading" class="card-heading">What was submitted</h2>
+              <ul class="submitted-list" id="submitted-list">
+                <li>11 saved answers included</li>
+                <li>Status: Read-only (locked)</li>
+              </ul>
+            </section>
+
+            <p class="review-note">
+              Your teacher will review your answers and any session events. Results are not yet published.
+            </p>
+
+            <a href="../../index.html" class="btn btn-primary btn-full">
+              Back to Home
+            </a>
+
+            <p class="contact-note">
+              Questions about this submission? Contact Dr. Aisha Shah and quote your receipt number.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="../shared/firebase-config.js"></script>
+  <script src="../shared/api.js"></script>
+  <script src="./sub_confirm.js"></script>
+</body>
+</html>

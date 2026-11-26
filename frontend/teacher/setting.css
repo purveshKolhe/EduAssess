@@ -1,0 +1,454 @@
+/* Reset & Base Styles — PRD Section 13 Palette */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #0369A1;
+    --primary-hover: #075985;
+    --primary-soft: #F0F9FF;
+    --primary-border: #BAE6FD;
+    --text-primary: #1F2937;
+    --text-secondary: #4B5563;
+    --bg-page: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --border-color: #CBD5E1;
+    --error: #B42318;
+    --error-soft: #FEE2E2;
+    --success: #166534;
+    --success-soft: #DCFCE7;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-page);
+    line-height: 1.5;
+}
+
+.dashboard {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.brand {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+header p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 36px 20px 60px;
+}
+
+.create-heading {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.step-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.step-info a {
+    text-decoration: none;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.step-info a:hover {
+    text-decoration: underline;
+}
+
+.step-info p {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* Feedback Banner */
+.feedback-banner {
+    display: none;
+    padding: 12px 14px;
+    border-radius: 6px;
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.feedback-banner.error {
+    display: block;
+    background-color: var(--error-soft);
+    color: var(--error);
+    border: 1px solid #FCA5A5;
+}
+
+.feedback-banner.success {
+    display: block;
+    background-color: var(--success-soft);
+    color: var(--success);
+    border: 1px solid #86EFAC;
+}
+
+/* Two-Column Form Layout */
+.form-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+.left-column,
+.right-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-card {
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--primary);
+    border-radius: 8px;
+    padding: 18px 16px;
+    background-color: var(--bg-card);
+}
+
+.form-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    font-size: 12.5px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 44px;
+    border: 1px solid #94A3B8;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 13.5px;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+    border-color: var(--primary);
+}
+
+.form-group small {
+    font-size: 11.5px;
+    color: var(--text-secondary);
+    margin-top: 6px;
+}
+
+.time-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.time-layout .form-group {
+    margin-bottom: 0;
+}
+
+.timezone {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+}
+
+/* Checkbox Area */
+.checkbox-area {
+    margin-top: 18px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px 14px;
+}
+
+.checkbox-area label {
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.checkbox-area input {
+    accent-color: var(--primary);
+    width: 16px;
+    height: 16px;
+}
+
+.checkbox-area p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+    padding-left: 24px;
+}
+
+/* Notice Box */
+.notice-box {
+    background-color: var(--primary-soft);
+    border: 1px solid var(--primary-border);
+    border-left: 4px solid var(--primary);
+    border-radius: 6px;
+    padding: 13px 14px;
+    margin-top: 18px;
+}
+
+.notice-box h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 6px;
+}
+
+.notice-box p {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Buttons */
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.outline-btn {
+    background-color: var(--bg-card);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+    padding: 12px 18px;
+    min-height: 44px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.outline-btn:hover {
+    background-color: var(--primary-soft);
+}
+
+.dark-btn {
+    background-color: var(--primary);
+    color: #FFFFFF;
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+    padding: 12px 18px;
+    min-height: 44px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.dark-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    padding: 16px 24px;
+    font-size: 12.5px;
+    color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .step-info,
+    .form-layout {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .form-buttons {
+        flex-wrap: wrap;
+    }
+
+    .form-buttons button {
+        flex: 1;
+    }
+}
+
+@media (max-width: 450px) {
+    .time-layout {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    .form-buttons button {
+        width: 100%;
+    }
+}
+
+
+/* Question Builder */
+.q-builder-card {
+    margin-top: 18px;
+}
+
+.q-count-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    margin-bottom: 16px;
+}
+
+.q-count-row .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.form-group textarea {
+    width: 100%;
+    border: 1px solid #94A3B8;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 13.5px;
+    font-family: inherit;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    resize: vertical;
+}
+
+.form-group textarea:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 1px;
+    border-color: var(--primary);
+}
+
+.q-editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0 12px;
+    border-top: 1px solid var(--border-color);
+    font-size: 13.5px;
+    color: var(--primary);
+}
+
+.link-btn {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.q-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.q-nav-buttons button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.q-review-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 360px;
+    overflow-y: auto;
+}
+
+.q-review-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--bg-page);
+}
+
+.q-review-text {
+    flex: 1;
+    font-size: 13px;
+}
+
+.q-review-text strong {
+    color: var(--primary);
+}
+
+.q-review-empty {
+    color: var(--error);
+    font-style: italic;
+}
+
+.q-edit-btn {
+    padding: 6px 12px;
+    min-height: 32px;
+    font-size: 12.5px;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduAssess - Your Exams</title>
+    <link rel="stylesheet" href="audit_log.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- App Header -->
+        <header>
+            <a href="../../index.html" class="brand">EduAssess</a>
+            <div class="header-right">
+                <a href="../student/student_exam.html" class="switch-link">Switch to Student View</a>
+                <p>Teacher · A. Shah</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+
+            <div class="page-top">
+                <div>
+                    <h1 class="exams-heading">Your exams</h1>
+                    <p class="exams-date">Friday, 23 October 2026 · Dr. Aisha Shah</p>
+                </div>
+                <a href="setting.html" class="dark-btn">+ Create exam</a>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button type="button" class="tab-btn active" data-filter="ALL">All exams (3)</button>
+                <button type="button" class="tab-btn" data-filter="LIVE">Live (1)</button>
+                <button type="button" class="tab-btn" data-filter="DRAFT">Drafts (1)</button>
+            </div>
+
+            <!-- Exam Cards List -->
+            <div class="exam-list" id="exam-list">
+                <p class="loading-text">Loading exams...</p>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Next: Create exam → schedule → questions → publish. Live exam → monitor attempts.</p>
+        </footer>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <script src="../shared/firebase-config.js"></script>
+    <script src="../shared/api.js"></script>
+    <script src="audit_log.js"></script>
+
+</body>
+
+</html>

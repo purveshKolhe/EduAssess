@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduAssess — Proctored Exam &amp; Audit Dashboard</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <!-- App Header -->
+        <header class="app-header">
+            <div class="container header-inner">
+                <a href="index.html" class="brand">EduAssess</a>
+                <span class="badge-pill">OJT Demo · PST_PD_006</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+
+                <section class="hero">
+                    <span class="eyebrow">PROCTORED EXAM ENGINE &amp; ANTI-CHEATING LOGS</span>
+                    <h1>Fair timed exams with live proctoring &amp; honest audit trails</h1>
+                    <p class="subtitle">
+                        Choose a role below to test creating timed exams, taking a live countdown quiz with
+                        auto-save and tab-focus detection, or reviewing chronological audit logs.
+                    </p>
+                </section>
+
+                <div class="role-grid">
+
+                    <!-- Teacher Card -->
+                    <article class="role-card">
+                        <span class="role-tag teacher-tag">TEACHER VIEW</span>
+                        <h2>Instructor &amp; Proctoring Dashboard</h2>
+                        <p>
+                            Create timed exams, publish exam codes, inspect Maya Patel's live answers,
+                            review tab-switch flags, and export attempt reports.
+                        </p>
+                        <ul class="feature-list">
+                            <li>View &amp; filter Live, Draft, and Closed exams</li>
+                            <li>Create new exams with custom duration &amp; questions</li>
+                            <li>Inspect saved answers, timing analytics &amp; audit logs</li>
+                        </ul>
+                        <div class="card-actions">
+                            <a href="frontend/teacher/audit_log.html" class="btn btn-primary">Open Teacher Dashboard →</a>
+                            <a href="frontend/teacher/questions.html" class="btn btn-outline">Inspect Maya Patel's Attempt</a>
+                        </div>
+                    </article>
+
+                    <!-- Student Card -->
+                    <article class="role-card">
+                        <span class="role-tag student-tag">STUDENT VIEW</span>
+                        <h2>Timed Exam Runner</h2>
+                        <p>
+                            Join an exam using code <strong>BIO-CELL-01</strong> (or any code you create),
+                            answer under a live countdown timer with auto-save, and test tab-switch warnings.
+                        </p>
+                        <ul class="feature-list">
+                            <li>Real-time countdown timer with automatic deadline lock</li>
+                            <li>Instant auto-save across questions &amp; reloads</li>
+                            <li>Tab-focus loss warning logged directly to teacher audit trail</li>
+                        </ul>
+                        <div class="card-actions">
+                            <a href="frontend/student/student_exam.html" class="btn btn-primary">Join Exam as Student →</a>
+                            <a href="frontend/student/exam_view.html" class="btn btn-outline">Resume Active Exam</a>
+                        </div>
+                    </article>
+
+                </div>
+                <p id="reset-msg" class="reset-msg" aria-live="polite"></p>
+
+            </div>
+        </main>
+
+    </div>
+
+    <script src="frontend/shared/api.js"></script>
+    <script>
+        document.getElementById("reset-demo-btn").addEventListener("click", async () => {
+            const msg = document.getElementById("reset-msg");
+            msg.textContent = "Resetting sample data...";
+            await apiResetDemo();
+            msg.textContent = "✓ Sample data reset! BIO-CELL-01 and Maya Patel's attempt are ready.";
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,379 @@
+/* Reset & Base Styles — PRD Section 13 Palette */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-page: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-subtle: #F0F9FF;
+  --border-color: #CBD5E1;
+  --border-primary: #BAE6FD;
+  --text-primary: #1F2937;
+  --text-secondary: #4B5563;
+  --primary: #0369A1;
+  --primary-hover: #075985;
+  --success: #166534;
+  --success-soft: #DCFCE7;
+  --error: #B42318;
+  --error-soft: #FEE2E2;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-page);
+  line-height: 1.5;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* App Header */
+.app-header {
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 0;
+  background-color: var(--bg-card);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.switch-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.switch-link:hover {
+  text-decoration: underline;
+}
+
+.user-badge {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 36px 0 64px;
+}
+
+.page-intro {
+  margin-bottom: 24px;
+}
+
+.page-intro h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.student-meta {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Feedback Banner */
+.feedback-banner {
+  display: none;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.feedback-banner.error {
+  display: block;
+  background-color: var(--error-soft);
+  color: var(--error);
+  border: 1px solid #FCA5A5;
+}
+
+.feedback-banner.success {
+  display: block;
+  background-color: var(--success-soft);
+  color: var(--success);
+  border: 1px solid #86EFAC;
+}
+
+/* Two-Column Grid */
+.exam-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Cards */
+.card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-card);
+}
+
+/* Left Column: Form & Exam Details */
+.exam-code-form {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.required {
+  color: var(--error);
+}
+
+.form-input {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  border: 1px solid #94A3B8;
+  border-radius: var(--radius-sm);
+  margin-bottom: 14px;
+  background-color: var(--bg-card);
+}
+
+.form-input:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+  border-color: var(--primary);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 24px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn-outline {
+  background-color: var(--bg-card);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-subtle);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #FFFFFF;
+  border: 1px solid var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Exam Details Card */
+.exam-details-card {
+  padding: 22px 20px;
+  border-top: 4px solid var(--primary);
+}
+
+.exam-title {
+  font-size: 16.5px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.status-tag {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 3px 9px;
+  border-radius: 4px;
+  background-color: var(--success-soft);
+  color: var(--success);
+  margin-bottom: 8px;
+}
+
+.instructor-info {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.exam-specs {
+  list-style: none;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+}
+
+.exam-specs li {
+  margin-bottom: 5px;
+}
+
+/* Right Column: Instructions & Actions */
+.instructions-card {
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.section-heading {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.instructions-list {
+  padding-left: 20px;
+  font-size: 14px;
+  color: var(--text-primary);
+  margin-bottom: 22px;
+}
+
+.instructions-list li {
+  margin-bottom: 12px;
+}
+
+/* Notice Box */
+.notice-box {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-primary);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+}
+
+.notice-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: var(--primary);
+}
+
+.notice-text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Checkbox Confirmation */
+.confirmation-row {
+  margin-bottom: 22px;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+/* Action Buttons Row */
+.action-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 14px;
+}
+
+.action-buttons .btn {
+  min-width: 196px;
+}
+
+/* Bottom Footer */
+.spec-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 16px 0;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  background-color: var(--bg-card);
+}
+
+@media (max-width: 960px) {
+  .exam-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons .btn {
+    width: 100%;
+  }
+}

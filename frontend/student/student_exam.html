@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduAssess — Join your exam</title>
+  <link rel="stylesheet" href="./student_exam.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- Main App Header -->
+    <header class="app-header">
+      <div class="container header-inner">
+        <a href="../../index.html" class="brand">EduAssess</a>
+        <div class="header-right">
+          <a href="../teacher/audit_log.html" class="switch-link">Switch to Teacher View</a>
+          <span class="user-badge">Student · Maya</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- Page Title & Student Info -->
+        <section class="page-intro">
+          <h1>Join your exam</h1>
+          <p class="student-meta">Maya Patel · ST-1042</p>
+          <p class="student-meta">Class 10-B</p>
+        </section>
+
+        <div id="join-feedback" class="feedback-banner" role="alert"></div>
+
+        <!-- Two-Column Layout -->
+        <div class="exam-grid">
+          <!-- Left Column: Exam Lookup & Details -->
+          <div class="left-column">
+            <form class="exam-code-form" id="find-exam-form">
+              <label for="exam-code" class="form-label">
+                Exam code <span class="required" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="text"
+                id="exam-code"
+                name="exam-code"
+                class="form-input"
+                placeholder="Enter exam code (e.g. BIO-CELL-02)"
+                required
+              />
+              <button type="submit" class="btn btn-outline btn-full">
+                Find exam
+              </button>
+            </form>
+
+            <article class="card exam-details-card" aria-labelledby="exam-title">
+              <h2 id="exam-title" class="exam-title">No exam loaded yet</h2>
+              <p id="exam-status-tag" class="status-tag">ENTER EXAM CODE</p>
+              <p id="exam-instructor" class="instructor-info"></p>
+
+              <ul class="exam-specs" id="exam-specs-list">
+                <li>Enter the exam code provided by your teacher and click Find exam.</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Right Column: Instructions & Start Controls -->
+          <div class="right-column">
+            <section class="card instructions-card" aria-labelledby="instructions-heading">
+              <h2 id="instructions-heading" class="section-heading">Before you begin</h2>
+              <ol class="instructions-list">
+                <li>Use a stable connection and stay on this exam tab.</li>
+                <li>Answers save automatically. Check “All changes saved” before leaving a question.</li>
+                <li>You may revisit questions until you submit. At 00:00, saved answers submit automatically.</li>
+                <li>Tab switches are logged for teacher review. A flag alone does not prove cheating.</li>
+              </ol>
+
+              <div class="notice-box" role="note">
+                <h3 class="notice-title">Your work is protected</h3>
+                <p class="notice-text">
+                  If your connection drops, drafts stay on this device and sync when you reconnect. Keep this browser open until submission is confirmed.
+                </p>
+              </div>
+            </section>
+
+            <div class="confirmation-row">
+              <label class="checkbox-label">
+                <input type="checkbox" id="agree-rules" checked />
+                <span>I have read the instructions and understand the timer and tab-switch policy.</span>
+              </label>
+            </div>
+
+            <div class="action-buttons">
+              <button type="button" id="start-exam-btn" class="btn btn-primary" disabled>
+                Start exam
+              </button>
+              <a href="../../index.html" class="btn btn-outline">
+                Back to Home
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bottom Flow Annotation Footer -->
+    <footer class="spec-footer">
+      <div class="container">
+        <p>Start exam → timed answering. Example start: 09:30:00 IST; personal deadline: 10:00:00 IST.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="../shared/firebase-config.js"></script>
+  <script src="../shared/api.js"></script>
+  <script src="./student_exam.js"></script>
+</body>
+</html>

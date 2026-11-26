@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduAssess - Create Exam</title>
+    <link rel="stylesheet" href="setting.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- App Header -->
+        <header>
+            <a href="../../index.html" class="brand">EduAssess</a>
+            <p>Teacher · A. Shah</p>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+
+            <h1 class="create-heading">Create an exam</h1>
+
+            <div class="step-info">
+                <a href="audit_log.html">‹ Your exams</a>
+                <p>Schedule, access &amp; questions</p>
+            </div>
+
+            <div id="form-feedback" class="feedback-banner" role="alert"></div>
+
+            <form id="create-exam-form" novalidate>
+
+                <div class="form-layout">
+
+                    <!-- Left Column -->
+                    <div class="left-column">
+
+                        <div class="form-card">
+                            <h3>Exam details</h3>
+
+                            <div class="form-group">
+                                <label for="exam-title">Exam title *</label>
+                                <input
+                                    type="text"
+                                    id="exam-title"
+                                    placeholder="e.g. Biology 101 · Cell Biology Quiz"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="class">Class *</label>
+                                <select id="class" required>
+                                    <option>Class 10-B · 30 students</option>
+                                    <option>Class 10-A · 28 students</option>
+                                    <option>Class 11-A · 32 students</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exam-code">Exam code *</label>
+                                <input
+                                    type="text"
+                                    id="exam-code"
+                                    placeholder="e.g. BIO-CELL-02"
+                                    required>
+                                <small>Students use this code to join the exam.</small>
+                            </div>
+                        </div>
+
+                        <!-- Question Builder Card -->
+                        <div class="form-card q-builder-card">
+                            <h3>Questions</h3>
+
+                            <div class="q-count-row">
+                                <div class="form-group">
+                                    <label for="question-count">Number of questions *</label>
+                                    <input
+                                        type="number"
+                                        id="question-count"
+                                        value="3"
+                                        min="1"
+                                        max="100"
+                                        required>
+                                </div>
+                                <button type="button" id="apply-count-btn" class="outline-btn">Set count</button>
+                            </div>
+
+                            <!-- One-by-one Question Editor -->
+                            <div id="question-editor-view">
+                                <div class="q-editor-header">
+                                    <strong id="q-counter">Question 1 of 3</strong>
+                                    <button type="button" id="review-all-btn" class="link-btn">Review all</button>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="q-text">Question prompt *</label>
+                                    <textarea
+                                        id="q-text"
+                                        rows="3"
+                                        placeholder="Type the question here..."></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="q-points">Points</label>
+                                    <input type="number" id="q-points" value="2" min="1">
+                                </div>
+
+                                <div class="q-nav-buttons">
+                                    <button type="button" id="prev-q-btn" class="outline-btn">← Previous</button>
+                                    <button type="button" id="next-q-btn" class="dark-btn">Next →</button>
+                                </div>
+                            </div>
+
+                            <!-- All Questions Review List -->
+                            <div id="question-review-view" class="hidden">
+                                <div class="q-editor-header">
+                                    <strong id="review-heading">All questions (3)</strong>
+                                    <button type="button" id="back-to-editor-btn" class="link-btn">← Back to editor</button>
+                                </div>
+                                <div id="question-review-list" class="q-review-list"></div>
+                            </div>
+                        </div>
+
+                        <div class="checkbox-area">
+                            <label>
+                                <input type="checkbox" id="track-tab-switch" checked>
+                                Record tab-switch events for review
+                            </label>
+                            <p>Students will see this policy before starting.</p>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="right-column">
+
+                        <div class="form-card">
+                            <h3>Start window</h3>
+
+                            <div class="form-group">
+                                <label for="exam-date">Exam date *</label>
+                                <input
+                                    type="date"
+                                    id="exam-date"
+                                    required>
+                            </div>
+
+                            <div class="time-layout">
+                                <div class="form-group">
+                                    <label for="open-time">Opens at *</label>
+                                    <input
+                                        type="time"
+                                        id="open-time"
+                                        value="09:00"
+                                        required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="last-entry">Last entry at *</label>
+                                    <input
+                                        type="time"
+                                        id="last-entry"
+                                        value="09:30"
+                                        required>
+                                </div>
+                            </div>
+
+                            <p class="timezone">Time zone: India Standard Time (UTC+05:30)</p>
+
+                            <div class="form-group">
+                                <label for="duration">Attempt duration (minutes) *</label>
+                                <input
+                                    type="number"
+                                    id="duration"
+                                    value="30"
+                                    min="1"
+                                    required>
+                                <small id="duration-hint">Each student gets 30 minutes from their start time.</small>
+                            </div>
+                        </div>
+
+                        <div class="notice-box">
+                            <h4>Entry window is not the deadline</h4>
+                            <p>
+                                Students can join any time between the open time and last entry time.
+                                Saved answers submit automatically when an attempt's timer expires.
+                            </p>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="button" id="save-draft-btn" class="outline-btn">Save draft &amp; exit</button>
+                            <button type="submit" class="dark-btn">Publish exam →</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>
+                Published exams appear immediately in Your exams and can be joined by students using the exam code.
+            </p>
+        </footer>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <script src="../shared/firebase-config.js"></script>
+    <script src="../shared/api.js"></script>
+    <script src="setting.js"></script>
+
+</body>
+
+</html>

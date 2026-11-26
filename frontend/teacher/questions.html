@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduAssess - Attempt Details</title>
+    <link rel="stylesheet" href="questions.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- App Header -->
+        <header>
+            <a href="../../index.html" class="brand">EduAssess</a>
+            <p>Teacher · A. Shah</p>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+
+            <h1 class="attempt-heading" id="student-name">Maya Patel</h1>
+
+            <a href="audit_log.html" class="back-link">‹ Your exams</a>
+
+            <div class="student-details" id="student-details">
+                <p>ST-1042 · Class 10-B / BIO-CELL-01 · Attempt ATT-1042-01</p>
+                <p>Started 09:30:00 · Ends 10:00:00 IST</p>
+            </div>
+
+            <div class="attempt-status" id="attempt-status-box">
+                <h3 id="attempt-status-title">In progress · 00:42 remaining</h3>
+                <p id="attempt-status-sub">
+                    11 / 12 answered · All changes saved at 09:59:18.
+                    Saved answers will auto-submit at 10:00:00.
+                </p>
+            </div>
+
+            <div class="attempt-layout">
+
+                <!-- Left Column -->
+                <div class="left-content">
+
+                    <section class="content-card">
+                        <h3>Saved answers · read only</h3>
+
+                        <div class="form-group">
+                            <label for="inspect-question">Inspect question</label>
+                            <select id="inspect-question"></select>
+                        </div>
+
+                        <div class="saved-question">
+                            <h4 id="question-prompt">
+                                Explain how water moves across a selectively
+                                permeable membrane during osmosis.
+                            </h4>
+
+                            <div class="student-answer">
+                                <p id="student-answer-text">
+                                    Water moves from a dilute solution to a
+                                    more concentrated solution through a
+                                    selectively permeable membrane.
+                                </p>
+                            </div>
+
+                            <p class="saved-time" id="saved-time-meta">Draft saved 09:59:18 · 16 words</p>
+                            <p class="saved-time" id="unanswered-meta">Q8 unanswered · Q12 included in saved answers</p>
+                        </div>
+                    </section>
+
+                    <section class="content-card timing-card">
+                        <h3>Timing analytics</h3>
+
+                        <p id="timing-summary">Loading timing data...</p>
+                        <p>Timing is descriptive, not proof of misconduct.</p>
+
+                        <h4>Time per question (minutes)</h4>
+
+                        <div id="timing-bars"></div>
+
+                        <div class="bar-labels" id="timing-scale">
+                            <span>0</span>
+                            <span>1 min</span>
+                            <span>2+ min</span>
+                        </div>
+
+                        <p class="view-all" id="timing-footer"></p>
+                    </section>
+
+                </div>
+
+                <!-- Right Column -->
+                <div class="right-content">
+
+                    <section class="content-card audit-card">
+                        <div class="audit-header-row">
+                            <h3>Audit log · chronological</h3>
+                            <button type="button" id="refresh-audit-btn" class="mini-refresh-btn">Refresh</button>
+                        </div>
+
+                        <h4 id="flag-status-heading" class="flag-warning">1 review flag · Not yet reviewed</h4>
+
+                        <div class="audit-events" id="audit-events"></div>
+
+                        <div class="review-notice">
+                            <h4>A flag is not a verdict</h4>
+                            <p>
+                                Review the event and student context before
+                                making any academic integrity decision.
+                            </p>
+                        </div>
+
+                        <button type="button" id="mark-reviewed-btn" class="review-btn">
+                            Mark event reviewed
+                        </button>
+                    </section>
+
+                    <section class="content-card export-card">
+                        <h3>Export attempt</h3>
+
+                        <p class="export-label">Choose a format:</p>
+
+                        <div class="radio-options">
+                            <label>
+                                <input type="radio" name="format" value="CSV" checked>
+                                CSV · answers &amp; audit report
+                            </label>
+
+                            <label>
+                                <input type="radio" name="format" value="JSON">
+                                JSON · full attempt &amp; event log
+                            </label>
+                        </div>
+
+                        <div class="export-checkboxes">
+                            <label>
+                                <input type="checkbox" id="inc-answers" checked>
+                                Include answers and timings
+                            </label>
+
+                            <label>
+                                <input type="checkbox" id="inc-audit" checked>
+                                Include audit log &amp; review status
+                            </label>
+                        </div>
+
+                        <p class="export-note" id="export-note">
+                            Live snapshot ready. Downloads directly to your computer.
+                        </p>
+
+                        <button type="button" id="download-btn" class="download-btn">
+                            Download attempt snapshot
+                        </button>
+                    </section>
+
+                </div>
+
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>
+                Back to Your exams → all exams.
+                Export contains the selected data; flags remain review events,
+                not misconduct findings.
+            </p>
+        </footer>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <script src="../shared/firebase-config.js"></script>
+    <script src="../shared/api.js"></script>
+    <script src="questions.js"></script>
+
+</body>
+
+</html>
